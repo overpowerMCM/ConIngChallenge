@@ -21,7 +21,7 @@ public class ChallengeManager : MonoBehaviour
     {
         List<ColumnInfo> columnInfo = new List<ColumnInfo>();
 
-        string[] columnNames = _service.GetColumnsNames();
+        string[] columnNames = _service.ColumnsNames;
 
         for (int i = 0; i < columnNames.Length; i++)
         {
@@ -34,7 +34,7 @@ public class ChallengeManager : MonoBehaviour
         TableModel tableModel = new TableModel()
         {
             Headers = columnInfo.ToArray(),
-            Rows = _service.GetRows()
+            Rows = _service.Rows
         };
 
         _dataTable.Model = tableModel;

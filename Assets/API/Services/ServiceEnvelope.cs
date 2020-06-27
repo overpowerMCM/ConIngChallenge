@@ -8,19 +8,25 @@ namespace API.Services
     public class ServiceEnvelope
     {
         IRepositoryEnvelope _repository;
-        public ServiceEnvelope( IRepositoryEnvelope repository )
+        public ServiceEnvelope(IRepositoryEnvelope repository)
         {
             _repository = repository;
         }
 
-        public string[] GetColumnsNames()
+        public string Title
         {
-            return _repository.GetHeaders();
+            get => _repository.GetTitle();
         }
 
-        public object[][] GetRows()
+        public string[] ColumnsNames
         {
-            return _repository.GetData();
+
+            get => _repository.GetHeaders();
+        }
+
+        public object[][] Rows
+        {
+            get => _repository.GetData();
         }
 
     }

@@ -41,5 +41,10 @@ namespace Data.Repositories.HardcodedRepository
         {
             return _headers;
         }
+
+        public string GetTitle()
+        {
+            return "Citas";
+        }
     }
 }

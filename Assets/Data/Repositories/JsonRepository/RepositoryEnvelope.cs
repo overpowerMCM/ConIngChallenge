@@ -53,5 +53,12 @@ namespace Data.Repositories.JsonRepository
 
             return headers.ToArray();
         }
+
+        public string GetTitle()
+        {
+            string strJson = File.ReadAllText(_jsonPath);
+            JsonData json = JsonMapper.ToObject(strJson);
+            return json["Title"].ToString();
+        }
     }
 }

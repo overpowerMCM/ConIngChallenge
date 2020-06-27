@@ -6,6 +6,7 @@ namespace Domain.Instances
 {
     public interface IRepositoryEnvelope
     {
+        string GetTitle();
         string[] GetHeaders();
 
         object[][] GetData();
