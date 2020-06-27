@@ -1,5 +1,5 @@
 ﻿using API.Services;
-using Data.Repositories.HardcodedRepository;
+using Data.Repositories.JsonRepository;
 using System.Collections;
 using System.Collections.Generic;
 using UI.DataTable;
