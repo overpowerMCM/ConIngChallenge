@@ -4,11 +4,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UI.DataTable;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ChallengeManager : MonoBehaviour
 {
     [SerializeField]
     DataTable _dataTable;
+
+    [SerializeField]
+    Text _title;
 
     ServiceEnvelope _service;
     // Start is called before the first frame update
@@ -19,6 +23,8 @@ public class ChallengeManager : MonoBehaviour
 
     public void RebuildTable()
     {
+        _title.text = _service.Title;
+
         List<ColumnInfo> columnInfo = new List<ColumnInfo>();
 
         string[] columnNames = _service.ColumnsNames;
