@@ -44,6 +44,7 @@ namespace UI
                 Destroy(cell.gameObject);
             }
             _cellStack.Clear();
+            Destroy(gameObject);
         }
     }
 }

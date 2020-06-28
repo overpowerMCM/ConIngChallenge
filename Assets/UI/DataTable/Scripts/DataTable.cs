@@ -22,9 +22,15 @@ namespace UI.DataTable
 
         void Clear()
         {
-            _header.Dispose();
-            _header = null;
-
+            if (null != _header)
+            {
+                _header.Dispose();
+                _header = null;
+            }
+            foreach (Row row in _rows)
+            {
+                row.Dispose();
+            }
             _rows.Clear();
         }
 
@@ -52,7 +58,7 @@ namespace UI.DataTable
 
         private void SetDirty()
         {
-            Debug.Log("Rebuild Header");
+            Clear();
 
             CreateHeader();
 
